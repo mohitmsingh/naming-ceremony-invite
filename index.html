@@ -1,168 +1,100 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Naming Ceremony Invitation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="shortcut icon" href="favicon.png" type="image/png" />
+  <title>Naming Ceremony Invitation | 20th April 2025</title>
+  <meta name="description" content="Join us in celebrating the naming ceremony of our newborn on April 20th, 2025 at Siddhivinayak Celebration, Nagpur." />
+  <link rel="stylesheet" href="css/style.css" />
   <style>
-    * { box-sizing: border-box; }
-
-    body, html {
+    body {
       margin: 0;
-      padding: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to right, #ffe0b2, #ffcc80);
-      color: #333;
-      height: 100vh;
-      overflow: hidden;
-    }
-
-    .intro, .invitation {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      transition: opacity 1s ease-in-out;
-    }
-
-    .intro {
-      background-color: rgba(255, 255, 255, 0.85);
-      z-index: 2;
-    }
-
-    .invitation {
-      opacity: 0;
-      z-index: 1;
-      padding: 2rem;
+      background-color: #fff6f0;
+      color: #5a3e36;
       text-align: center;
     }
-
-    .show-invitation .intro {
-      opacity: 0;
-      pointer-events: none;
-    }
-
-    .show-invitation .invitation {
-      opacity: 1;
-      z-index: 2;
-    }
-
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .card {
-      background: white;
-      padding: 2rem;
-      border-radius: 20px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-      max-width: 500px;
+    .welcome-screen {
+      position: fixed;
       width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #ffe0e9, #fbeeff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      transition: opacity 1s ease;
+      z-index: 1000;
     }
-
+    .main-content {
+      display: none;
+      padding: 20px;
+      animation: fadeIn 2s ease-in-out;
+    }
     .baby-photo {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
+      width: 200px;
+      height: 200px;
       object-fit: cover;
-      box-shadow: 0 0 15px rgba(0,0,0,0.2);
-      margin-bottom: 1rem;
+      border-radius: 50%;
+      margin: 20px auto;
+      border: 4px solid #e3b7d0;
     }
-
-    .btn {
-      margin-top: 2rem;
-      padding: 0.8rem 1.5rem;
-      background: #ff9800;
+    .map-button {
+      background-color: #d87da0;
       color: white;
-      border: none;
-      border-radius: 30px;
-      cursor: pointer;
-      font-size: 1rem;
-      transition: background 0.3s;
-    }
-
-    .btn:hover {
-      background: #f57c00;
-    }
-
-    .details {
-      margin-top: 1rem;
-      font-size: 1.1rem;
-      line-height: 1.6;
-    }
-
-    a.map-link {
-      display: inline-block;
-      margin-top: 1rem;
+      padding: 12px 24px;
       text-decoration: none;
-      color: #ff5722;
+      border-radius: 8px;
       font-weight: bold;
     }
-
-    .footer {
-      margin-top: 2rem;
-      font-size: 0.9rem;
-      color: #555;
-    }
-
-    @media (max-width: 600px) {
-      h1 { font-size: 2rem; }
-      .card { padding: 1.5rem; }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
   </style>
 </head>
+
 <body>
-
-  <!-- Background music -->
-  <audio id="bgMusic" loop>
-    <source src="music.mp3" type="audio/mpeg" />
-    Your browser does not support the audio element.
-  </audio>
-
-  <!-- Intro Screen -->
-  <div class="intro">
-    <h1>You're Invited!</h1>
-    <button class="btn" onclick="showInvitation()">Tap to Open</button>
+  <div class="welcome-screen" id="welcomeScreen">
+    <h1>👶 Tap to Reveal</h1>
+    <p>You're warmly invited to our baby's Naming Ceremony</p>
   </div>
 
-  <!-- Main Invitation -->
-  <div class="invitation">
-    <div class="card">
-      <img src="baby.jpg" alt="Baby Photo" class="baby-photo" />
-      <h1>Naming Ceremony</h1>
-      <p>We joyfully invite you to the naming ceremony of our beloved newborn baby.</p>
-      <p><strong>Baby's Name:</strong> To Be Revealed</p>
-      <div class="details">
-        <p><strong>Date:</strong> 20th April, 2025</p>
-        <p><strong>Venue:</strong> Siddhivinayak Celebration</p>
-        <p><strong>Address:</strong><br>
-        Plot No 1 & 2, Mankapur Ring Rd,<br>
-        Opposite NIT Garden, Dambhare Layout,<br>
-        Subhash Nagar, Trimurtee Nagar,<br>
-        Nagpur, Maharashtra 440022</p>
-        <a class="map-link" href="https://maps.app.goo.gl/yxkZiF4mJBZi3DtH7" target="_blank">📍 Open in Google Maps</a>
-      </div>
-      <div class="footer">
-        With love,<br>
-        Mohit & Family
-      </div>
-    </div>
+  <div class="main-content" id="mainContent">
+    <h2>With the Grace of God</h2>
+    <h1>We Joyfully Invite You To</h1>
+    <h2>The Naming Ceremony of Our Baby</h2>
+
+    <img src="assets/img/baby-placeholder.jpg" alt="Baby Photo" class="baby-photo" />
+
+    <h3>🗓️ Date: 20th April, 2025</h3>
+    <h3>📍 Venue: Siddhivinayak Celebration</h3>
+    <p>Plot No 1 & 2, Mankapur Ring Rd, Opp. NIT Garden,<br>Dambhare Layout, Subhash Nagar, Trimurtee Nagar,<br> Nagpur, Maharashtra 440022</p>
+
+    <a class="map-button" href="https://maps.app.goo.gl/yxkZiF4mJBZi3DtH7" target="_blank">View on Google Maps</a>
+
+    <p style="margin-top: 30px;">We look forward to sharing this special day with you!</p>
   </div>
+
+  <audio id="bgMusic" src="song.mp3" loop></audio>
 
   <script>
-    function showInvitation() {
-      document.body.classList.add('show-invitation');
-      const music = document.getElementById("bgMusic");
-      // Try autoplay (for desktop), otherwise allow manual
-      music.play().catch(() => {
-        console.log("Autoplay blocked, user must interact");
-      });
-    }
-  </script>
+    const welcomeScreen = document.getElementById('welcomeScreen');
+    const mainContent = document.getElementById('mainContent');
+    const bgMusic = document.getElementById('bgMusic');
 
+    welcomeScreen.addEventListener('click', () => {
+      welcomeScreen.style.opacity = 0;
+      setTimeout(() => {
+        welcomeScreen.style.display = 'none';
+        mainContent.style.display = 'block';
+      }, 1000);
+      bgMusic.play();
+    });
+  </script>
 </body>
+
 </html>
